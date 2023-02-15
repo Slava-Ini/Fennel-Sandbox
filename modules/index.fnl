@@ -8,7 +8,7 @@
   (print (utils.sub 5 3)))
 
 ; Nested modules use `.` instead of `/` in the path
-(let [nested (require :lib.nested)]
+(let [nested (require :libs.nested)]
   (print (nested.say-hi "Slava")))
 
 
