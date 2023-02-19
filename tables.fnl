@@ -26,3 +26,8 @@
 ; Debug function to pretty print table instead of it's memory location
 (local fennel (require :fennel)) 
 (fn _G.pp [x] (print (fennel.view x)))
+
+; Nil-safe table lookup
+; Returns nil without looking further in the code
+(let [t {:a [2 3 4]}] (?. t :a 4 :b)) ; => nil
+(let [t {:a [2 3 4 {:b 42}]}] (?. t :a 4 :b)) ; => 42
